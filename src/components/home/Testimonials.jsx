@@ -1,9 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import Container from '../ui/Container';
-import testimonials from '../../data/testimonials';
+import { useTestimonials } from '../../hooks/useTestimonials';
+import { getInitials } from '../../utils/getInitials';
 import './Testimonials.css';
 
+// Module-level component so React reuses the same DOM nodes across renders.
+// Defining it inside the component body remounts the cards on every render
+// and destroys the CSS slide transition.
+const renderStars = (rating) => '★'.repeat(rating);
+
+const CardComponent = ({ testimonial, position }) => (
+  <div className={`featured-card featured-card-${position}`}>
+    <div className="featured-card-inner">
+      <div className="testimonial-stars">{renderStars(testimonial.rating)}</div>
+      <p className="testimonial-text">{testimonial.text || testimonial.review}</p>
+      <div className="testimonial-user">
+        <div className="testimonial-avatar">
+          {getInitials(testimonial.name)}
+        </div>
+        <div className="user-info">
+          <h5>{testimonial.name}</h5>
+          <span>{testimonial.position || testimonial.designation}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 export default function Testimonials() {
+  const { testimonials, loading } = useTestimonials();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -16,13 +41,20 @@ export default function Testimonials() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Reset activeIndex if it's out of bounds
   useEffect(() => {
-    if (!isAutoPlay) return;
+    if (testimonials.length > 0 && activeIndex >= testimonials.length) {
+      setActiveIndex(0);
+    }
+  }, [testimonials.length, activeIndex]);
+
+  useEffect(() => {
+    if (!isAutoPlay || testimonials.length === 0) return;
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % testimonials.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, [isAutoPlay]);
+  }, [isAutoPlay, testimonials.length]);
 
   const handlePrev = () => {
     setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
@@ -57,23 +89,25 @@ export default function Testimonials() {
   const activeTestimonial = testimonials[activeIndex];
   const nextTestimonial = testimonials[getNextIndex()];
 
-  const renderStars = (rating) => '★'.repeat(rating);
-
-  const CardComponent = ({ testimonial, position }) => (
-    <div className={`featured-card featured-card-${position}`}>
-      <div className="featured-card-inner">
-        <div className="testimonial-stars">{renderStars(testimonial.rating)}</div>
-        <p className="testimonial-text">{testimonial.text}</p>
-        <div className="testimonial-user">
-          <img src={testimonial.image} alt={testimonial.name} loading="lazy" />
-          <div className="user-info">
-            <h5>{testimonial.name}</h5>
-            <span>{testimonial.position}</span>
+  // Show loading state only on first visit (no cache)
+  if (loading && testimonials.length === 0) {
+    return (
+      <section className="testimonials-carousel-section">
+        <Container>
+          <div className="section-title">
+            <p className="tag">Clients Feedback</p>
+            <h2>What Our Clients Say</h2>
+            <p className="carousel-subtitle">Loading testimonials...</p>
           </div>
-        </div>
-      </div>
-    </div>
-  );
+        </Container>
+      </section>
+    );
+  }
+
+  // Safety check: need at least 1 testimonial
+  if (testimonials.length === 0) {
+    return null;
+  }
 
   return (
     <section className="testimonials-carousel-section">
@@ -104,9 +138,9 @@ export default function Testimonials() {
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
-            {!isMobile && <CardComponent testimonial={prevTestimonial} position="left" />}
-            <CardComponent testimonial={activeTestimonial} position="center" />
-            {!isMobile && <CardComponent testimonial={nextTestimonial} position="right" />}
+            {!isMobile && <CardComponent key="left" testimonial={prevTestimonial} position="left" />}
+            <CardComponent key="center" testimonial={activeTestimonial} position="center" />
+            {!isMobile && <CardComponent key="right" testimonial={nextTestimonial} position="right" />}
           </div>
 
           <button
