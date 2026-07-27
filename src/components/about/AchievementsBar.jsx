@@ -8,7 +8,7 @@ const achievements = [
   {
     id: 5,
     icon: '👍',
-    value: '0',
+    value: '100%',
     label: 'Client Satisfaction',
   },
 ];

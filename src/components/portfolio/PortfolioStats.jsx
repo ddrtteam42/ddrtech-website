@@ -8,13 +8,13 @@ const statsData = [
   {
     id: 3,
     icon: '🚀',
-    value: '0',
+    value: '100%',
     label: 'Client Satisfaction',
   },
   {
     id: 4,
     icon: '🌐',
-    value: '0',
+    value: '10+',
     label: 'Industries Served',
   },
 ];

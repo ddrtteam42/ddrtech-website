@@ -4,16 +4,10 @@ import './TeamSection.css';
 
 const teamMembers = [
   {
-    id: 1,
-    name: 'Dikshit Singh',
-    role: 'CEO & Director',
-    image: require('../../assets/team_images/DikshitSingh.jpg'),
-  },
-  {
     id: 2,
     name: 'HEENA CHANDEL',
     role: 'CEO & Founder',
-    image: require('../../assets/team_images/HeenaChandel.jpg'),
+    image: require('../../assets/team_images/heena_mam.png'),
   },
   {
     id: 3,
@@ -25,12 +19,12 @@ const teamMembers = [
     id: 4,
     name: 'Aniket Chaudhary',
     role: 'Full Stack Developer',
-    image: require('../../assets/team_images/aniket.png'),
+    image: require('../../assets/team_images/aniket_image.png'),
   },
   {
     id: 5,
     name: 'Rahul Kaushal',
-    role: 'Full Stack Developer',
+    role: 'UI/UX Developer',
     image: require('../../assets/team_images/Rahul.png'),
   },
   // {

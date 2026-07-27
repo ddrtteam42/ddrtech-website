@@ -11,7 +11,7 @@ export default function AboutStats() {
           {stats.map((stat) => (
             <div key={stat.id} className="stat-item">
               <div className="stat-icon">{stat.icon}</div>
-              <div>
+              <div className="stat-content">
                 <strong>{stat.value}</strong>
                 <span>{stat.label}</span>
               </div>
