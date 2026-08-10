@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
+import { Code2, Briefcase, Award, Users, FileText, Sparkles } from 'lucide-react';
 import './InternshipHero.css';
 
 export default function InternshipHero() {
@@ -21,22 +22,28 @@ export default function InternshipHero() {
             </p>
             <div className="internship-hero-features">
               <div className="hero-feature">
-                <span className="dot blue"></span> Live Projects
+                <div className="feature-icon blue"><Code2 size={16} /></div>
+                <span>Live Projects</span>
               </div>
               <div className="hero-feature">
-                <span className="dot green"></span> Placement Assistance
+                <div className="feature-icon green"><Briefcase size={16} /></div>
+                <span>Placement Assistance</span>
               </div>
               <div className="hero-feature">
-                <span className="dot orange"></span> Industry Certificate
+                <div className="feature-icon orange"><Award size={16} /></div>
+                <span>Industry Certificate</span>
               </div>
               <div className="hero-feature">
-                <span className="dot blue"></span> Expert Mentorship
+                <div className="feature-icon blue"><Users size={16} /></div>
+                <span>Expert Mentorship</span>
               </div>
               <div className="hero-feature">
-                <span className="dot red"></span> Internship Letter
+                <div className="feature-icon red"><FileText size={16} /></div>
+                <span>Internship Letter</span>
               </div>
               <div className="hero-feature">
-                <span className="dot green"></span> Resume Building Support
+                <div className="feature-icon green"><Sparkles size={16} /></div>
+                <span>Resume Building Support</span>
               </div>
             </div>
             <div className="internship-hero-buttons">

@@ -98,4 +98,14 @@
     gap: 16px;
     padding: 24px 16px;
   }
+
+  .portfolio-stat {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 16px;
+    align-items: center;
+    max-width: 260px;
+    margin: 0 auto;
+    width: 100%;
+  }
 }

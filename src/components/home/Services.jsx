@@ -2,6 +2,7 @@ import React from 'react';
 import Container from '../ui/Container';
 import SectionTitle from '../ui/SectionTitle';
 import services from '../../data/services';
+import * as LucideIcons from 'lucide-react';
 import './Services.css';
 
 export default function Services() {
@@ -15,15 +16,18 @@ export default function Services() {
         />
 
         <div className="services-grid">
-          {services.map((service) => (
-            <div key={service.id} className="service-card">
-              <div className="service-icon">
-                <i className={service.icon}></i>
+          {services.map((service) => {
+            const Icon = LucideIcons[service.icon];
+            return (
+              <div key={service.id} className="service-card">
+                <div className="service-icon">
+                  {Icon ? <Icon size={24} /> : <i className={service.icon}></i>}
+                </div>
+                <h4>{service.title}</h4>
+                <p>{service.description}</p>
               </div>
-              <h4>{service.title}</h4>
-              <p>{service.description}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     </Container>

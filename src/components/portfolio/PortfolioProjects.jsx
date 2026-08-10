@@ -36,10 +36,6 @@ export default function PortfolioProjects() {
             </div>
           ))}
         </div>
-
-        <div className="portfolio-view-more">
-          <a href="#portfolio">View More Projects</a>
-        </div>
       </Container>
     </section>
   );

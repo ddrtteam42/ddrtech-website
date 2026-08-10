@@ -34,8 +34,8 @@
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
 }
 
 .team-card {
@@ -58,6 +58,18 @@
   aspect-ratio: 0.85 / 1;
   background: linear-gradient(180deg, #0a1128, #07101d);
   overflow: hidden;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #60a5fa;
+  background: linear-gradient(180deg, #0a1128, #07101d);
 }
 
 .team-photo img {

@@ -140,3 +140,25 @@
   outline: 2px solid #4a6cf7;
   outline-offset: 2px;
 }
+
+@media (max-width: 768px) {
+  .course-card {
+    background: rgba(74, 108, 247, 0.05);
+    border-color: rgba(74, 108, 247, 0.3);
+  }
+  
+  .course-card-icon {
+    background: linear-gradient(135deg, #4a6cf7, #6d9fff);
+    color: #fff;
+    box-shadow: 0 0 16px rgba(74, 108, 247, 0.3);
+  }
+  
+  .course-card-title {
+    color: #6d9fff;
+  }
+  
+  .course-card-action {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -68,66 +68,61 @@
   line-height: 1.7;
 }
 
-/* .internship-hero-features {
+.internship-hero-features {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px 30px;
-  margin-bottom: 28px;
-} */
- .internship-hero-features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px 40px;
-  margin-bottom: 28px;
-  position: relative;
-  padding: 0 20px;
-}
-.internship-hero-features::before {
-  content: "";
-  position: absolute;
-  left: 45%;
-  top: 10px;
-  bottom: 10px;
-  width: 2px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(74, 108, 247, 0.8),
-    transparent
-  );
-  transform: translateX(-50%);
+  gap: 16px 24px;
+  margin-bottom: 32px;
 }
 
 .hero-feature {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-size: 14px;
   color: var(--dark);
-  font-weight: 500;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(74, 108, 247, 0.04);
+  border: 1px solid rgba(74, 108, 247, 0.08);
+  transition: all 0.3s ease;
 }
 
-.hero-feature .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+.hero-feature:hover {
+  transform: translateY(-2px);
+  background: rgba(74, 108, 247, 0.08);
+  border-color: rgba(74, 108, 247, 0.15);
+}
+
+.feature-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
-.hero-feature .dot.blue {
-  background: var(--primary-light);
+.feature-icon.blue {
+  background: rgba(74, 108, 247, 0.12);
+  color: #4a6cf7;
 }
 
-.hero-feature .dot.orange {
-  background: var(--accent);
+.feature-icon.green {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
 }
 
-.hero-feature .dot.green {
-  background: var(--success);
+.feature-icon.orange {
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
 }
 
-.hero-feature .dot.red {
-  background: var(--red);
+.feature-icon.red {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
 }
 
 .internship-hero-buttons {

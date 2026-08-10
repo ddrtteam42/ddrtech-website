@@ -332,18 +332,19 @@
 @media (max-width: 768px) {
   .testimonials-carousel-section { padding: 60px 0; }
   .testimonials-carousel-section .section-title { margin-bottom: 40px; }
-  .carousel-wrapper { padding: 0 50px; }
-  .carousel-track { gap: 0; justify-content: center; }
-  .featured-card-center { transform: scale(1); }
+  .carousel-wrapper { padding: 0 16px; }
+  .carousel-track { gap: 0; justify-content: center; width: 100%; }
+  .featured-card { width: 100%; max-width: 100%; }
+  .featured-card-center { transform: scale(1); width: 100%; }
 
   .featured-card-center .featured-card-inner {
     width: 100%;
-    max-width: 420px;
-    min-height: 300px;
+    max-width: 100%;
+    min-height: auto;
     padding: 24px;
   }
 
-  .carousel-arrow { width: 40px; height: 40px; font-size: 16px; }
+  .carousel-arrow { display: none; }
   .carousel-subtitle { font-size: 14px; }
 }
 
@@ -351,15 +352,14 @@
 @media (max-width: 480px) {
   .testimonials-carousel-section { padding: 50px 0; }
   .testimonials-carousel-section .section-title { margin-bottom: 32px; }
-  .carousel-wrapper { padding: 0 40px; }
+  .carousel-wrapper { padding: 0 8px; }
 
   .featured-card-center .featured-card-inner {
-    min-height: 280px;
+    min-height: auto;
     padding: 20px;
   }
 
   .testimonial-text { font-size: 14px; }
-  .carousel-arrow { width: 36px; height: 36px; font-size: 14px; }
   .pagination-dot { width: 8px; height: 8px; }
   .pagination-dot.active { width: 24px; }
 }

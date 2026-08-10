@@ -4,6 +4,12 @@ import './TeamSection.css';
 
 const teamMembers = [
   {
+    id: 1,
+    name: 'Jaspreet Singh',
+    role: 'CEO',
+    image: require('../../assets/team_images/Jaspreet.webp'),
+  },
+  {
     id: 2,
     name: 'HEENA CHANDEL',
     role: 'CEO & Founder',
@@ -27,12 +33,12 @@ const teamMembers = [
     role: 'UI/UX Developer',
     image: require('../../assets/team_images/Rahul.png'),
   },
-  // {
-  //   id: 6,
-  //   name: 'Sneha Reddy',
-  //   role: 'Digital Marketer',
-  //   image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80',
-  // },
+  {
+    id: 6,
+    name: 'Sonam',
+    role: 'Digital Marketing',
+    image: require('../../assets/team_images/sonam.webp'),
+  },
 ];
 
 export default function TeamSection() {
@@ -48,16 +54,15 @@ export default function TeamSection() {
           {teamMembers.map((member) => (
             <div key={member.id} className="team-card">
               <div className="team-photo">
-                <img src={member.image} alt={member.name} />
+                {member.image ? (
+                  <img src={member.image} alt={member.name} />
+                ) : (
+                  <div className="avatar-placeholder">{member.name.charAt(0)}</div>
+                )}
               </div>
               <div className="team-body">
                 <h4>{member.name}</h4>
                 <p>{member.role}</p>
-                <div className="socials">
-                  <span>in</span>
-                  <span>𝕏</span>
-                  <span>✉</span>
-                </div>
               </div>
             </div>
           ))}

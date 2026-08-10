@@ -1,47 +1,47 @@
 import React from 'react';
 import Container from '../ui/Container';
-import Icon from '../ui/Icon';
+import { Search, ClipboardList, Code2, CheckCircle2, CloudUpload, Target } from 'lucide-react';
 import './TechnologiesProcess.css';
 
 const processSteps = [
   {
     id: 1,
-    icon: <Icon name="search" />,
+    icon: <Search size={22} />,
     number: '01',
     title: 'Research',
     description: 'We research and select the best technologies.',
   },
   {
     id: 2,
-    icon: <Icon name="clipboardList" />,
+    icon: <ClipboardList size={22} />,
     number: '02',
     title: 'Plan',
     description: 'We plan the architecture and tech stack.',
   },
   {
     id: 3,
-    icon: <Icon name="code" />,
+    icon: <Code2 size={22} />,
     number: '03',
     title: 'Develop',
     description: 'We build with clean and efficient code.',
   },
   {
     id: 4,
-    icon: <Icon name="checkCircle" />,
+    icon: <CheckCircle2 size={22} />,
     number: '04',
     title: 'Test',
     description: 'We test for performance, security and quality.',
   },
   {
     id: 5,
-    icon: <Icon name="cloudUpload" />,
+    icon: <CloudUpload size={22} />,
     number: '05',
     title: 'Deploy',
     description: 'We deploy and deliver scalable solutions.',
   },
   {
     id: 6,
-    icon: <Icon name="target" />,
+    icon: <Target size={22} />,
     number: '06',
     title: 'Support',
     description: 'We provide ongoing support and updates.',

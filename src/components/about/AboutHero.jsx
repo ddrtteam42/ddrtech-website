@@ -4,6 +4,7 @@ import Button from '../ui/Button';
 //import officeImage from '../../assets/images/Office.webp';
 import './AboutHero.css';
 import { useNavigate } from 'react-router-dom';
+import { Users, Target, Lightbulb, ShieldCheck } from 'lucide-react';
 
 export default function AboutHero() {
   const navigate = useNavigate();
@@ -44,7 +45,9 @@ export default function AboutHero() {
 
           <div className="hero-side">
             <div className="focus-item">
-              <div className="icon-badge">👥</div>
+              <div className="icon-badge">
+                <Users size={22} />
+              </div>
               <div>
                 <h4>Customer Focused</h4>
                 <p>We put our clients first and build lasting relationships.</p>
@@ -52,7 +55,9 @@ export default function AboutHero() {
             </div>
 
             <div className="focus-item">
-              <div className="icon-badge">🎯</div>
+              <div className="icon-badge">
+                <Target size={22} />
+              </div>
               <div>
                 <h4>Result Oriented</h4>
                 <p>We focus on delivering results that matter.</p>
@@ -60,7 +65,9 @@ export default function AboutHero() {
             </div>
 
             <div className="focus-item">
-              <div className="icon-badge">💡</div>
+              <div className="icon-badge">
+                <Lightbulb size={22} />
+              </div>
               <div>
                 <h4>Innovation Driven</h4>
                 <p>We use latest technology and creative ideas.</p>
@@ -68,7 +75,9 @@ export default function AboutHero() {
             </div>
 
             <div className="focus-item">
-              <div className="icon-badge">🛡️</div>
+              <div className="icon-badge">
+                <ShieldCheck size={22} />
+              </div>
               <div>
                 <h4>Quality Assured</h4>
                 <p>We follow best practices to ensure top quality.</p>

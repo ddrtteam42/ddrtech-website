@@ -1,47 +1,64 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Container from '../ui/Container';
+import * as LucideIcons from 'lucide-react';
 import './ServicesGrid.css';
 
 const servicesData = [
   {
     id: 1,
-    icon: '💻',
+    icon: 'Monitor',
     title: 'Website Development',
+    path: '/services/website-development',
     description: 'We build modern, responsive and SEO-friendly websites that help you build a strong online presence and grow your business.',
   },
   {
     id: 2,
-    icon: '📱',
+    icon: 'Smartphone',
     title: 'Mobile App Development',
+    path: '/services/mobile-app-development',
     description: 'We create high-performance mobile applications for Android and iOS with smooth user experience and scalable architecture.',
   },
   {
     id: 3,
-    icon: '🎨',
+    icon: 'Palette',
     title: 'UI/UX Design',
+    path: '/contact',
     description: 'We design intuitive and engaging user experiences that make your digital products simple, attractive and effective.',
   },
   {
     id: 4,
-    icon: '⚙️',
+    icon: 'Code2',
     title: 'Software Development',
+    path: '/contact',
     description: 'We develop custom software solutions that automate processes, improve efficiency and solve complex business challenges.',
   },
   {
     id: 5,
-    icon: '📢',
+    icon: 'Megaphone',
     title: 'Digital Marketing',
+    path: '/contact',
     description: 'From SEO to Social Media, we help you increase visibility, generate leads and grow your brand online.',
   },
   {
     id: 6,
-    icon: '🎧',
+    icon: 'Headphones',
     title: 'Maintenance & Support',
+    path: '/contact',
     description: 'We provide 24/7 support, regular updates and performance optimization to keep your systems secure and running smoothly.',
   },
 ];
 
 export default function ServicesGrid() {
+  const navigate = useNavigate();
+
+  const handleCardClick = (path) => {
+    if (path) {
+      navigate(path);
+      window.scrollTo(0, 0);
+    }
+  };
+
   return (
     <section className="services-section">
       <Container>
@@ -50,17 +67,32 @@ export default function ServicesGrid() {
           <h2>Our Professional Services</h2>
         </div>
         <div className="services-section-grid">
-          {servicesData.map((service) => (
-            <div key={service.id} className="services-section-card">
-              <div className="services-section-icon">{service.icon}</div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              {/* <a href="#" className="services-section-link">Learn More →</a> */}
-              <button className="services-section-link">
-  Learn More →
-</button>
-            </div>
-          ))}
+          {servicesData.map((service) => {
+            const Icon = LucideIcons[service.icon];
+            return (
+              <div
+                key={service.id}
+                className="services-section-card"
+                onClick={() => handleCardClick(service.path)}
+                style={{ cursor: 'pointer' }}
+              >
+                <div className="services-section-icon">
+                  {Icon ? <Icon size={24} /> : service.icon}
+                </div>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <button
+                  className="services-section-link"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleCardClick(service.path);
+                  }}
+                >
+                  Learn More →
+                </button>
+              </div>
+            );
+          })}
         </div>
       </Container>
     </section>

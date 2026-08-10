@@ -2,33 +2,34 @@ import React from 'react';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
 import { useNavigate } from 'react-router-dom';
+import * as LucideIcons from 'lucide-react';
 import './OurStory.css';
 
 const milestones = [
   {
     id: 1,
-    icon: '🏠',
+    icon: 'Building',
     year: '2021',
     title: 'Founded',
     description: 'Digital Drive Resource Tech Private Limited was founded with a small team and big ideas.',
   },
   {
     id: 2,
-    icon: '📊',
+    icon: 'TrendingUp',
     year: '2022',
     title: 'Growth',
     description: 'We grew our team and delivered amazing projects.',
   },
   {
     id: 3,
-    icon: '🌐',
+    icon: 'Globe',
     year: '2023',
     title: 'Expansion',
     description: 'Expanded our services and worked with global clients.',
   },
   {
     id: 4,
-    icon: '🚀',
+    icon: 'Rocket',
     year: '2024+',
     title: 'Future',
     description: 'Continuing our journey to build digital products that inspire.',
@@ -57,14 +58,19 @@ export default function OurStory() {
           </div>
 
           <div className="story-line">
-            {milestones.map((milestone) => (
-              <div key={milestone.id} className="milestone">
-                <div className="mile-icon">{milestone.icon}</div>
-                <span className="year">{milestone.year}</span>
-                <h4>{milestone.title}</h4>
-                <p>{milestone.description}</p>
-              </div>
-            ))}
+            {milestones.map((milestone) => {
+              const Icon = LucideIcons[milestone.icon];
+              return (
+                <div key={milestone.id} className="milestone">
+                  <div className="mile-icon">
+                    {Icon ? <Icon size={24} /> : milestone.icon}
+                  </div>
+                  <span className="year">{milestone.year}</span>
+                  <h4>{milestone.title}</h4>
+                  <p>{milestone.description}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </Container>

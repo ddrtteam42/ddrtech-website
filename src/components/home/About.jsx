@@ -1,12 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Container from '../ui/Container';
 import Card from '../ui/Card';
 import Button from '../ui/Button';
-import { scrollToSection } from '../../utils/scrollUtils';
 import './About.css';
 //import officeImage from "../../assets/images/Office.webp";
 
 export default function About() {
+  const navigate = useNavigate();
+
+  const handleLearnMore = () => {
+    navigate('/about');
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Container>
       <section id="about">
@@ -24,7 +31,7 @@ export default function About() {
               <li><i className="fa-solid fa-circle-check"></i>Secure & Scalable</li>
               <li><i className="fa-solid fa-circle-check"></i>24/7 Support</li>
             </ul>
-            <Button onClick={() => scrollToSection('contact')}>Learn More About Us</Button>
+            <Button onClick={handleLearnMore}>Learn More About Us</Button>
           </Card>
 
           <div className="about-image">

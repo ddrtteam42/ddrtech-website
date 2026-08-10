@@ -1,9 +1,9 @@
 // --- Company Stats (used on Home, About, Portfolio pages) ---
 const companyStats = [
-  { id: 1, icon: '◎', value: '8', label: 'Projects Completed' },
-  { id: 2, icon: '👥', value: '8', label: 'Happy Clients' },
-  { id: 3, icon: '💡', value: '1', label: 'Years Experience' },
-  { id: 4, icon: '👤', value: '5-10', label: 'Expert Team Members' },
+  { id: 1, icon: 'Briefcase', value: '8', label: 'Projects Completed' },
+  { id: 2, icon: 'Users', value: '8', label: 'Happy Clients' },
+  { id: 3, icon: 'Lightbulb', value: '1', label: 'Years Experience' },
+  { id: 4, icon: 'UserCheck', value: '5-10', label: 'Expert Team Members' },
 ];
 
 // --- Internship / Training Stats ---
