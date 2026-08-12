@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from '../ui/Container';
+import { Target, Eye } from 'lucide-react';
 import './MissionVision.css';
 
 export default function MissionVision() {
@@ -8,7 +9,9 @@ export default function MissionVision() {
       <Container>
         <div className="cards-2">
           <div className="soft-card">
-            <div className="soft-icon">🎯</div>
+            <div className="soft-icon">
+              <Target size={26} />
+            </div>
             <div>
               <div className="section-tag">Our Mission</div>
               <h3>Empowering Businesses Through Technology</h3>
@@ -20,7 +23,9 @@ export default function MissionVision() {
           </div>
 
           <div className="soft-card green">
-            <div className="soft-icon">👁</div>
+            <div className="soft-icon green-icon">
+              <Eye size={26} />
+            </div>
             <div>
               <div className="section-tag green-tag">Our Vision</div>
               <h3>To Be A Global Leader In Digital Innovation</h3>

@@ -25,10 +25,10 @@ export default function Footer() {
             </p>
 
             <div className="socials">
-              <i className="fa-brands fa-facebook-f"></i>
-              <a href="https://www.instagram.com/ddrtech_official" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
-              <i className="fa-brands fa-linkedin-in"></i>
-              <i className="fa-brands fa-x-twitter"></i>
+              <a href="https://www.facebook.com/profile.php?id=61591777337881" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/ddrtech_official?igsh=MThrOGNid2I1NWFocQ==" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
+              <a href="https://youtube.com/@digitaldriveresourcetech?si=ha-Frqya_pAxaAFr" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-youtube"></i></a>
+              <a href="https://x.com/digitaldrive001" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-x-twitter"></i></a>
             </div>
           </div>
 
