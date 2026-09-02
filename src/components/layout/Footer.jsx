@@ -50,9 +50,10 @@ export default function Footer() {
             <ul>
               <li onClick={() => handleNavigation('/services/website-development')} style={{ cursor: 'pointer' }}>Website Development</li>
               <li onClick={() => handleNavigation('/services/mobile-app-development')} style={{ cursor: 'pointer' }}>Mobile App Development</li>
-              <li onClick={() => handleNavigation('/services')} style={{ cursor: 'pointer' }}>UI/UX Design</li>
+              <li onClick={() => handleNavigation('/services/ui-ux-design')} style={{ cursor: 'pointer' }}>UI/UX Design</li>
+              <li onClick={() => handleNavigation('/services/software-development')} style={{ cursor: 'pointer' }}>Software Development</li>
               <li onClick={() => handleNavigation('/services')} style={{ cursor: 'pointer' }}>E-Commerce Solutions</li>
-              <li onClick={() => handleNavigation('/services')} style={{ cursor: 'pointer' }}>Digital Marketing</li>
+              <li onClick={() => handleNavigation('/services/digital-marketing')} style={{ cursor: 'pointer' }}>Digital Marketing</li>
             </ul>
           </div>
 
